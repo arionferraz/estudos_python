@@ -14,26 +14,64 @@
         2 pontos são apenas suspeitos, necessitando outras investigações. Valores
         iguais ou abaixo de 1 são liberados.
 '''
+print('Para descobrir o assassino, responda à polícia o pequeno questionário asseguir com 5 perguntas onde a resposta só pode ser sim ou não:')
 
-from pickle import TRUE
-
-
-idade = int(input("Digite a idade: "))
-while idade < 0 or idade > 150:
-    idade = int(input("Idade inválida, digite um valor entre 0 e 150: "))
-
-salario = float(input("Digite o salário: "))
-while salario <= 0:
-    salario = int(input("Salario inválido, digite um valor acima 0: "))
-
-sexo = input("Digite M para masculino, F para feminino e Outro para outras: ")
-
+cont =0
 while True:
-    if sexo == "M":
+    resposta = input('Mora perto da vítima? ')
+    if resposta=="sim":
+        cont+=1
         break
-    elif sexo == "F":
-        break
-    elif sexo == "outro":
+    elif resposta == 'não':
         break
     else:
-        sexo = input("Sexo inválido, digite M para masculino, F para feminino e outro para outras: ")
+        print('Responda sim ou não" ')
+
+while True:
+    resposta = input('Já trabalhou com a vítima? ')
+    if resposta=="sim":
+        cont+=1
+        break
+    elif resposta == 'não':
+        break
+    else:
+        print('Responda sim ou não" ')
+
+while True:
+    resposta = input('Telefonou para a vítima? ')
+    if resposta=="sim":
+        cont+=1
+        break
+    elif resposta == 'não':
+        break
+    else:
+        print('Responda sim ou não" ')
+
+while True:
+    resposta = input('Esteve no local do crime? ')
+    if resposta=="sim":
+        cont+=1
+        break
+    elif resposta == 'não':
+        break
+    else:
+        print('Responda sim ou não" ')
+
+while True:
+    resposta = input('Devia para a vítima? ')
+    if resposta=="sim":
+        cont+=1
+        break
+    elif resposta == 'não':
+        break
+    else:
+        print('Responda sim ou não" ')
+
+if cont == 1:
+    print('É inocente, está iberado!!')
+elif cont == 2:
+    print('É suspeito, serão feitas maiores investigações!!')
+elif cont == 3 or cont == 4:
+    print('É cumplice, ficará detido!!')
+elif cont == 5:
+    print('É assassino, ficará detido!!')
