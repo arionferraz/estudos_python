@@ -36,7 +36,7 @@ for i in range(len(lista1)):
         saida = saida + str(lista1[i]) + " + " + str(lista2[i]) + ", "
     if i == (len(lista1)-1):
         saida = saida + str(lista1[i]) + " + " + str(lista2[i]) + "] = "
-    
+
 saida = saida + str(soma)
 
 print("Efetuando a soma entre os respectivos itens das listas informadas:\n" + saida)
